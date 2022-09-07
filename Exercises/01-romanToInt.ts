@@ -1,4 +1,4 @@
-const romanLegend:Record<string, number> = {
+const romanChart:Record<string, number> = {
   'I': 1,
   'V': 5,
   'X': 10,
@@ -14,14 +14,14 @@ function romanToInt(s:string):number {
 
   const valueCalc = romanInputList.reduce((total:number, letter:string, index:number) => {
     if (lastIndex === index) return total;
-    if (romanLegend[letter] >= romanLegend[romanInputList[index + 1]]) {
-      return total + romanLegend[letter];
+    if (romanChart[letter] >= romanChart[romanInputList[index + 1]]) {
+      return total + romanChart[letter];
     }
-    return total - romanLegend[letter];
+    return total - romanChart[letter];
   }, 0);
   const lastLetter = romanInputList[lastIndex];
 
-  return valueCalc + romanLegend[lastLetter];
+  return valueCalc + romanChart[lastLetter];
 };
 
 console.log(romanToInt('XX'))
