@@ -1,4 +1,4 @@
-function twoSum(nums: number[], target: number): number[] {
+export default function twoSum(nums: number[], target: number): number[] {
   const indexList = [];
   for (let curTarget = 0;curTarget < nums.length; curTarget += 1) {
     for (let check = 0; check < nums.length; check += 1) {
